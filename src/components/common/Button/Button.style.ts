@@ -16,10 +16,6 @@ export const Button = styled.button<IButtonProps>`
       font-family: 'KotraHope';
       border: 2px solid ${color.black};
       border-radius: 8.4rem;
-
-      &:hover {
-        background-color: ${color.hover};
-      }
     `;
   }}
 `;
