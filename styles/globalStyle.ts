@@ -1,5 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+import { color } from './theme';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -22,7 +23,8 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-size: 1.6rem;
-    font-family: Noto Sans KR, sans-serif;
+    font-family: sans-serif;
+    background-color: ${color.background};
   }
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
