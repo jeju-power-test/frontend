@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
-import Temp from "@components/Temp/temp";
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return <Temp />;
+  return <div />;
 };
 
 export default Home;
