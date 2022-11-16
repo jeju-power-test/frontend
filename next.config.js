@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
-const path = require("path");
-const withInterceptStdout = require("next-intercept-stdout");
+const path = require('path');
+const withInterceptStdout = require('next-intercept-stdout');
 
-const prod = process.env.NODE_ENV === "production";
+const prod = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   reactStrictMode: true,
@@ -19,14 +19,14 @@ const nextConfig = {
   webpack(config) {
     config.resolve = {
       alias: {
-        "@pages": path.resolve(__dirname, "pages"),
-        "@styles": path.resolve(__dirname, "styles"),
-        "@components": path.resolve(__dirname, "src/components"),
-        "@constants": path.resolve(__dirname, "src/constants"),
-        "@hooks": path.resolve(__dirname, "src/hooks"),
-        "@react-query": path.resolve(__dirname, "src/react-query"),
-        "@recoil": path.resolve(__dirname, "src/recoil"),
-        "@types": path.resolve(__dirname, "src/types"),
+        '@pages': path.resolve(__dirname, 'pages'),
+        '@styles': path.resolve(__dirname, 'styles'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@constants': path.resolve(__dirname, 'src/constants'),
+        '@hooks': path.resolve(__dirname, 'src/hooks'),
+        '@react-query': path.resolve(__dirname, 'src/react-query'),
+        '@recoil': path.resolve(__dirname, 'src/recoil'),
+        '@types': path.resolve(__dirname, 'src/types'),
       },
       ...config.resolve,
     };
@@ -38,5 +38,5 @@ const nextConfig = {
 };
 
 module.exports = withInterceptStdout(nextConfig, (text) =>
-  text.includes("Duplicate atom key") ? "" : text
+  text.includes('Duplicate atom key') ? '' : text,
 );
