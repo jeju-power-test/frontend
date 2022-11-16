@@ -1,15 +1,27 @@
-import type { AppProps } from "next/app";
-import { RecoilRoot } from "recoil";
-import { QueryClientProvider } from "react-query";
-import { queryClient } from "@react-query/queryClient";
-import GlobalStyle from "@styles/globalStyle";
+import type { AppProps } from 'next/app';
+
+// lib
+import { ThemeProvider } from 'styled-components';
+import { RecoilRoot } from 'recoil';
+import { Hydrate, QueryClientProvider } from 'react-query';
+import { queryClient } from '@react-query/queryClient';
+
+// style
+import GlobalStyle from '@styles/globalStyle';
+import Font from '@styles/font';
+import theme from '@styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <GlobalStyle />
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Font />
+          <Hydrate state={pageProps.dehydratedState}>
+            <Component {...pageProps} />
+          </Hydrate>
+        </ThemeProvider>
       </QueryClientProvider>
     </RecoilRoot>
   );
