@@ -1,4 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+import { fadeInLeft, zoomOut } from 'react-animations';
+import Image from 'next/image';
+
+const FadeInLeft = keyframes`${fadeInLeft}`;
 
 export const Temp = styled.div`
   font-size: 2.4rem;
@@ -12,6 +16,7 @@ export const ImgContainer = styled.div`
   align-items: center;
   width: 32rem;
   height: 20rem;
+  animation: 0.6s ${FadeInLeft};
 `;
 
 export const Img = styled.img`

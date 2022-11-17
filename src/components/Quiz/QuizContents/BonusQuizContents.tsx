@@ -4,6 +4,8 @@ import { QUIZ_NUMBER } from '@constants/quiz';
 import { useSetRecoilState } from 'recoil';
 import { progressbarAtom } from '@recoil/progressbar';
 import { submitAnswerAtom } from '@recoil/submitAnswer';
+import * as subStyle from '../Quiz.style';
+import Image from 'next/image';
 
 function FindNextQuizNumber() {
   const router = useRouter();
@@ -15,7 +17,7 @@ function FindNextQuizNumber() {
   return result;
 }
 
-function QuizContents({ data }: any) {
+function BonusQuizContents({ data }: any) {
   const { id, question, answer, img } = data;
   const router = useRouter();
   const nextPageIndex = FindNextQuizNumber();
@@ -42,27 +44,39 @@ function QuizContents({ data }: any) {
   return (
     <>
       <Style.Question>{question}</Style.Question>
-      {id < 6 ? (
-        <Style.QuestionImage
-          src={img}
-          alt="QuestionImg"
-          width={320}
-          height={175}
-          priority
-        />
-      ) : null}
 
-      {answer.map((answer: string, key: number) => (
-        <Style.QuestionButton
-          key={key}
-          style={{ margin: '1rem 0rem' }}
-          onClick={() => handleProgressbarStateClick(id + 1, answer)}
-        >
-          {answer}
-        </Style.QuestionButton>
-      ))}
+      <subStyle.ImgContainer>
+        <subStyle.ImgBox>
+          <Image
+            src="https://kr.object.ncloudstorage.com/jejupower/content/10-A.png"
+            alt="왼쪽 아이콘"
+            width={117}
+            height={148}
+          />
+        </subStyle.ImgBox>
+
+        <subStyle.ImgBox>
+          <Image
+            src="https://kr.object.ncloudstorage.com/jejupower/content/10-B.png"
+            alt="오른쪽 아이콘"
+            width={148}
+            height={98}
+          />
+        </subStyle.ImgBox>
+      </subStyle.ImgContainer>
+      <Style.BtnLayout>
+        {answer.map((answer: string, key: number) => (
+          <Style.QuestionButton
+            key={key}
+            style={{ margin: '1rem 0rem', width: '50px' }}
+            onClick={() => handleProgressbarStateClick(id + 1, answer)}
+          >
+            {answer}
+          </Style.QuestionButton>
+        ))}
+      </Style.BtnLayout>
     </>
   );
 }
 
-export default QuizContents;
+export default BonusQuizContents;
