@@ -16,12 +16,6 @@ import theme from '@styles/theme';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
-      </head>
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
           <SSRProvider>

@@ -1,9 +1,9 @@
 import { Button } from '@components/common';
 import styled, { css, keyframes } from 'styled-components';
-import { fadeInLeft, zoomOut, zoomOutDown } from 'react-animations';
+import { fadeInLeft, zoomOut } from 'react-animations';
 
 const FadeInLeft = keyframes`${fadeInLeft}`;
-const ZoomOut = keyframes`${zoomOutDown}`;
+const ZoomOut = keyframes`${zoomOut}`;
 
 export const Question = styled.div`
   font-size: 3rem;
@@ -23,7 +23,7 @@ export const QuestionButton = styled(Button)`
   animation: 1.5s ${FadeInLeft};
 
   &:focus {
-    transform: scale(1.3);
+    /* transform: scale(1.3); */
     animation: 1.7s ${ZoomOut};
   }
 `;
