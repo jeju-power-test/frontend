@@ -1,7 +1,7 @@
 import { Layout } from '@components/common';
 import { QUIZ_COMPONENTS, QUIZ_NUMBER } from '@constants/quiz';
 import ProgressBar from '@components/ProgressBar/ProgressBar';
-import Head from 'next/head';
+
 interface IProps {
   queries: any;
 }
@@ -9,12 +9,12 @@ interface IProps {
 const QuizPage1 = ({ queries }: IProps) => {
   return (
     <>
-      <Head>
+      <head>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
-      </Head>
+      </head>
       <Layout type="fill">
         <ProgressBar />
         {QUIZ_COMPONENTS[queries]}
