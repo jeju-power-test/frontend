@@ -15,21 +15,23 @@ import theme from '@styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <RecoilRoot>
-      <QueryClientProvider client={queryClient}>
-        <SSRProvider>
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <Font />
-            <Hydrate state={pageProps.dehydratedState}>
-              <NextUIProvider>
-                <Component {...pageProps} />
-              </NextUIProvider>
-            </Hydrate>
-          </ThemeProvider>
-        </SSRProvider>
-      </QueryClientProvider>
-    </RecoilRoot>
+    <>
+      <RecoilRoot>
+        <QueryClientProvider client={queryClient}>
+          <SSRProvider>
+            <ThemeProvider theme={theme}>
+              <GlobalStyle />
+              <Font />
+              <Hydrate state={pageProps.dehydratedState}>
+                <NextUIProvider>
+                  <Component {...pageProps} />
+                </NextUIProvider>
+              </Hydrate>
+            </ThemeProvider>
+          </SSRProvider>
+        </QueryClientProvider>
+      </RecoilRoot>
+    </>
   );
 }
 

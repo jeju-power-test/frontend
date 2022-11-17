@@ -9,7 +9,7 @@ function ProgressBar() {
 
   return (
     <Style.Container>
-      <Grid.Container xs={12} sm={6} gap={2}>
+      <Grid.Container xs={15} md={20} xl={20}>
         <Grid>
           <Style.Description>{`${
             Number(progressbar) + 1
