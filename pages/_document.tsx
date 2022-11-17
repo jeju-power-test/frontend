@@ -7,6 +7,7 @@ import Document, {
   NextScript,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { CssBaseline } from '@nextui-org/react';
 
 class MyDocument extends Document {
   static async getInitialProps(
@@ -39,8 +40,8 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head />
+      <Html lang="ko">
+        <Head>{CssBaseline.flush()}</Head>
         <body>
           <Main />
           <NextScript />
