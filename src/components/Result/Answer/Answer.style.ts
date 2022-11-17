@@ -60,6 +60,7 @@ export const IconWrapper = styled.div`
 `;
 
 export const QuizCommentary = styled(Text)`
+  white-space: pre-wrap;
   line-height: 2.4rem;
   font-size: 1.6rem;
   font-family: 'Pretendard-Regular';

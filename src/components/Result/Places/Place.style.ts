@@ -13,8 +13,22 @@ export const PlacesTitle = styled.h1`
 `;
 
 export const PlaceCardWrapper = styled.li`
+  transition: transform 0.2s ease-in-out;
+
   &:not(:nth-last-of-type(1)) {
     margin-bottom: 2.2rem;
+  }
+
+  & > a {
+    & > div {
+      & > img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  &:hover {
+    transform: translate3D(0, -1rem, 0);
   }
 `;
 
