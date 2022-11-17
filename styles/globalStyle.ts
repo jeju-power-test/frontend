@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-size: 1.6rem;
-    font-family: sans-serif;
+    font-family: 'KotraHope', sans-serif;
     background-color: ${color.background};
   }
   html, body, div, span, applet, object, iframe,
