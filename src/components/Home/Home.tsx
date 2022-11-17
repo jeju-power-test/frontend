@@ -3,7 +3,11 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import * as Style from './Home.style';
 
-function Home() {
+interface IHomeProps {
+  count: number;
+}
+
+function Home({ count }: IHomeProps) {
   const router = useRouter();
 
   const scrollFadeIn = {
@@ -21,10 +25,10 @@ function Home() {
       </div>
       <div {...scrollFadeIn.image}>
         <Image
-          src="/assets/images/home-test.png"
+          src="/assets/images/intro.gif"
           alt="홈페이지 테스트"
-          width={320}
-          height={251}
+          width={240}
+          height={256}
           priority
         />
       </div>
@@ -37,7 +41,7 @@ function Home() {
         </Style.StartButton>
       </div>
       <Style.UserCountText {...scrollFadeIn.countText}>
-        지금까지 000,000명이 참여했어요
+        {`지금까지 ${count.toLocaleString()}명이 참여했어요`}
       </Style.UserCountText>
     </section>
   );
