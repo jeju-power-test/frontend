@@ -43,13 +43,13 @@ function QuizContents({ data }: any) {
       <Style.Question>{question}</Style.Question>
       {answer.map((answer: string, key: number) => {
         return (
-          <Button
+          <Style.QuestionButton
             key={key}
             style={{ margin: '1rem 0rem' }}
             onClick={() => handleProgressbarStateClick(answer)}
           >
             {answer}
-          </Button>
+          </Style.QuestionButton>
         );
       })}
     </>
