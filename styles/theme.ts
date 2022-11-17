@@ -6,7 +6,8 @@ export const color = {
   background: '#FFFBF9',
   black: '#303030',
   white: '#FFFFFF',
-  alert: '#EB3F3F',
+  alert: '#E00F1E',
+  success: '#3DB409',
 } as const;
 
 export type ColorType = typeof color;
