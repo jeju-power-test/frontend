@@ -2,6 +2,7 @@ import { DefaultTheme } from 'styled-components';
 
 export const color = {
   primary: '#FF8F5F',
+  primaryHover: '#F27E4D',
   secondary: '#78E590',
   background: '#FFFBF9',
   black: '#303030',
