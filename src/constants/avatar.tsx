@@ -88,11 +88,12 @@ const AVARTAR = [
   },
   {
     id: 8,
-    name: '고기국수',
+    name: '고기 국수',
     identity: (
       <span>
         제주도에 대해
-        <strong>골고루 이해하는</strong> 고기국수
+        <br />
+        <strong>골고루 이해하는</strong> 고기 국수
       </span>
     ),
   },
