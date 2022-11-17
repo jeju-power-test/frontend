@@ -4,20 +4,6 @@ import { Button } from '@components/common';
 import { Router, useRouter } from 'next/router';
 import { QUIZ_NUMBER } from '@constants/quiz';
 
-// function FindQuizNumber() {
-//   const router = useRouter();
-//   const quizNumber = QUIZ_NUMBER.find((number) => number === router.query.id);
-//   return quizNumber;
-// }
-
-// function FindNextQuizNumber() {
-//   const quizNumber = FindQuizNumber();
-//   const nextQuizNumber = QUIZ_NUMBER.find(
-//     (number) => number === Number(quizNumber) + 1,
-//   );
-//   return nextQuizNumber;
-// }
-
 function FindNextQuizNumber() {
   const router = useRouter();
   const quizNumber = QUIZ_NUMBER.find((number) => number === router.query.id);
