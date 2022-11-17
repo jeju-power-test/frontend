@@ -15,21 +15,29 @@ import theme from '@styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <RecoilRoot>
-      <QueryClientProvider client={queryClient}>
-        <SSRProvider>
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <Font />
-            <Hydrate state={pageProps.dehydratedState}>
-              <NextUIProvider>
-                <Component {...pageProps} />
-              </NextUIProvider>
-            </Hydrate>
-          </ThemeProvider>
-        </SSRProvider>
-      </QueryClientProvider>
-    </RecoilRoot>
+    <>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+      </head>
+      <RecoilRoot>
+        <QueryClientProvider client={queryClient}>
+          <SSRProvider>
+            <ThemeProvider theme={theme}>
+              <GlobalStyle />
+              <Font />
+              <Hydrate state={pageProps.dehydratedState}>
+                <NextUIProvider>
+                  <Component {...pageProps} />
+                </NextUIProvider>
+              </Hydrate>
+            </ThemeProvider>
+          </SSRProvider>
+        </QueryClientProvider>
+      </RecoilRoot>
+    </>
   );
 }
 
