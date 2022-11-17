@@ -6,6 +6,7 @@ const FadeInLeft = keyframes`${fadeInLeft}`;
 const ZoomOut = keyframes`${zoomOut}`;
 
 export const Question = styled.div`
+  animation: 0.3s ${FadeInLeft};
   font-size: 3rem;
   font-weight: 400;
   width: 100%;
@@ -20,10 +21,10 @@ export const QuestionDescription = styled.div`
 `;
 
 export const QuestionButton = styled(Button)`
-  animation: 1.5s ${FadeInLeft};
+  animation: 0.7s ${FadeInLeft};
 
   &:focus {
     /* transform: scale(1.3); */
-    animation: 1.7s ${ZoomOut};
+    animation: 0.7s ${ZoomOut};
   }
 `;
