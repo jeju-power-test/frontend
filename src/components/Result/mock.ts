@@ -80,3 +80,46 @@ export const PLACES = [
     image: 'regionImage',
   },
 ];
+
+export const SUBMIT = [
+  {
+    id: 1,
+    answer: 'oneAnswer',
+  },
+  {
+    id: 2,
+    answer: 'twoAnswer',
+  },
+  {
+    id: 3,
+    answer: 'threeAnswer',
+  },
+  {
+    id: 4,
+    answer: 'oneAnwer',
+  },
+  {
+    id: 5,
+    answer: 'oneAnwer',
+  },
+  {
+    id: 6,
+    answer: 'oneAnwer',
+  },
+  {
+    id: 7,
+    answer: 'sevenAnwer',
+  },
+  {
+    id: 8,
+    answer: 'oneAnwer',
+  },
+  {
+    id: 9,
+    answer: 'oneAnwer',
+  },
+  {
+    id: 10,
+    answer: 'tenAnwer',
+  },
+];

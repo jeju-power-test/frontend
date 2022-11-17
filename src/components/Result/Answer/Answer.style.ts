@@ -40,13 +40,13 @@ export const QuizAnswerContent = styled(Collapse)<{ correct: string }>`
         & > .nextui-collapse-subtitle {
           height: 100%;
           margin-left: 0.6rem;
+          color: ${correct === 'success' ? success : alert};
         }
       }
 
       .nextui-collapse-title {
         margin-bottom: 0.2rem;
         line-height: 2.2rem;
-        color: ${correct === 'success' ? success : alert};
         font-size: 2.4rem;
       }
     `;
@@ -61,6 +61,6 @@ export const IconWrapper = styled.div`
 
 export const QuizCommentary = styled(Text)`
   line-height: 2.4rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: 'Pretendard-Regular';
 `;
