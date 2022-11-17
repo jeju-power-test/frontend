@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import * as Style from './Home.style';
 
 function Home() {
+  const router = useRouter();
+
   return (
     <section>
       <Style.HomeQuestion>나의 제주력은 몇점?</Style.HomeQuestion>
@@ -13,7 +16,12 @@ function Home() {
         height={251}
         priority
       />
-      <Style.StartButton variant="primary">시작하기</Style.StartButton>
+      <Style.StartButton
+        variant="primary"
+        onClick={() => router.push('/quiz/1')}
+      >
+        시작하기
+      </Style.StartButton>
       <Style.UserCountText>지금까지 000,000명이 참여했어요</Style.UserCountText>
     </section>
   );
