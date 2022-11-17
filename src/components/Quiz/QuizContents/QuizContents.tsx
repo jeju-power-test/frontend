@@ -41,7 +41,6 @@ function QuizContents({ data }: any) {
 
   return (
     <>
-      <Style.QuestionDescription>나의 제주력은 몇점?</Style.QuestionDescription>
       <Style.Question>{question}</Style.Question>
       {answer.map((answer: string, key: number) => {
         return (
