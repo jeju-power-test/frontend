@@ -19,12 +19,13 @@
       "@*": ["src/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
+      "@api/*": ["src/api/*"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@hooks/*": ["src/hooks/*"],
       "@react-query/*": ["src/react-query/*"],
       "@recoil/*": ["src/recoil/*"],
-      "@types/*": ["src/types/*"],
+      "@types/*": ["src/types/*"]
     }
   },
   "include": ["next-env.d.ts", "next.config.js", "**/*.ts", "**/*.tsx"],

@@ -21,6 +21,7 @@ const nextConfig = {
       alias: {
         '@pages': path.resolve(__dirname, 'pages'),
         '@styles': path.resolve(__dirname, 'styles'),
+        '@api': path.resolve(__dirname, 'src/api'),
         '@components': path.resolve(__dirname, 'src/components'),
         '@constants': path.resolve(__dirname, 'src/constants'),
         '@hooks': path.resolve(__dirname, 'src/hooks'),
