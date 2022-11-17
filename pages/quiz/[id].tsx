@@ -1,6 +1,6 @@
 import { Layout } from '@components/common';
 import { QUIZ_COMPONENTS, QUIZ_NUMBER } from '@constants/quiz';
-
+import ProgressBar from '@components/ProgressBar/ProgressBar';
 interface IProps {
   queries: any;
 }
@@ -9,6 +9,7 @@ const QuizPage1 = ({ queries }: IProps) => {
   return (
     <>
       <Layout>
+        <ProgressBar />
         <div>문제 {queries}</div>
         {QUIZ_COMPONENTS[queries]}
       </Layout>
