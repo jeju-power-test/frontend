@@ -13,6 +13,7 @@ export const QuizLayout = styled.main`
 `;
 
 export const Question = styled.div`
+  animation: 0.3s ${FadeInLeft};
   width: 100%;
   margin-top: 6.8rem;
   margin-bottom: 2.4rem;
@@ -28,10 +29,10 @@ export const QuestionImage = styled(Image)`
 `;
 
 export const QuestionButton = styled(Button)`
-  animation: 1.5s ${FadeInLeft};
+  animation: 0.7s ${FadeInLeft};
 
   &:focus {
     /* transform: scale(1.3); */
-    animation: 1.7s ${ZoomOut};
+    animation: 0.7s ${ZoomOut};
   }
 `;
