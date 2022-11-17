@@ -41,19 +41,23 @@ function QuizContents({ data }: any) {
 
   return (
     <>
-      <Style.QuestionDescription>나의 제주력은 몇점?</Style.QuestionDescription>
       <Style.Question>{question}</Style.Question>
-      {answer.map((answer: string, key: number) => {
-        return (
-          <Style.QuestionButton
-            key={key}
-            style={{ margin: '1rem 0rem' }}
-            onClick={() => handleProgressbarStateClick(id + 1, answer)}
-          >
-            {answer}
-          </Style.QuestionButton>
-        );
-      })}
+      <Style.QuestionImage
+        src="/assets/images/temp.png"
+        alt="temp"
+        width={320}
+        height={175}
+        priority
+      />
+      {answer.map((answer: string, key: number) => (
+        <Style.QuestionButton
+          key={key}
+          style={{ margin: '1rem 0rem' }}
+          onClick={() => handleProgressbarStateClick(id + 1, answer)}
+        >
+          {answer}
+        </Style.QuestionButton>
+      ))}
     </>
   );
 }

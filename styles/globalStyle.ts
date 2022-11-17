@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
     -webkit-text-size-adjust: none;
+    background-color: ${color.background};
   }
   body {
     font-size: 1.6rem;
