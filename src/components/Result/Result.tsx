@@ -3,9 +3,19 @@ import { useRouter } from 'next/router';
 import { Button } from '@components/common';
 import { Answer, Places } from '@components/Result';
 import * as Style from './Result.style';
+import useTestResult from '@hooks/query/useTestResult';
+import { useEffect } from 'react';
+import { SUBMIT } from './mock';
 
 function Result() {
   const router = useRouter();
+  const { submitTestResult, userIdentity } = useTestResult();
+
+  useEffect(() => {
+    submitTestResult(SUBMIT);
+  }, []);
+
+  console.log('userIdentity: ', userIdentity);
 
   return (
     <Style.ResultContainer>
