@@ -12,18 +12,20 @@ function ProgressBar({ status }: IProgressBarProps) {
       <Grid.Container xs={15} md={20} xl={20}>
         <Grid>
           <Style.Description>{`${Number(status)}/10`}</Style.Description>
-          <Progress
+          <Style.Progressbar
             color="warning"
             value={Number(status) * 10}
             status="warning"
           >
-            <Image
-              src="/assets/images/progressbar-icon.png"
-              alt="프로그래바 아이콘"
-              width={40}
-              height={46}
-            />
-          </Progress>
+            <Style.Test>
+              <Image
+                src="/assets/images/progressbar-icon.png"
+                alt="progressbar icon"
+                width={40}
+                height={46}
+              />
+            </Style.Test>
+          </Style.Progressbar>
         </Grid>
       </Grid.Container>
     </Style.Container>

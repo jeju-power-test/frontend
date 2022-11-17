@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Progress } from '@nextui-org/react';
 
 export const Container = styled.div``;
 
@@ -13,4 +14,16 @@ export const Description = styled.div`
       font-size: 1.4rem;
     `;
   }}
+`;
+
+export const Progressbar = styled(Progress)`
+  & > .nextui-progress-wrapper-enter {
+    position: relative;
+  }
+`;
+
+export const Test = styled.div`
+  position: absolute;
+  top: -2rem;
+  right: -3rem;
 `;
