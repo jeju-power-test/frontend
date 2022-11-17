@@ -15,8 +15,7 @@ function FindNextQuizNumber() {
 
 function QuizContents({ data }: any) {
   const { id, question, answer } = data;
-  console.log(question);
-  console.log(answer);
+
   let router = useRouter();
   let nextPageIndex = FindNextQuizNumber();
   return (
@@ -25,9 +24,10 @@ function QuizContents({ data }: any) {
 
       <Style.Question>{question}</Style.Question>
 
-      {answer.map((answer: any) => {
+      {answer.map((answer: any, key: number) => {
         return (
           <Button
+            key={key}
             style={{ margin: '1rem 0rem' }}
             onClick={() => {
               router.push(`/quiz/${nextPageIndex}`);
