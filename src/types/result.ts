@@ -23,10 +23,9 @@ export interface IUserIdentity {
   identity: ReactElement;
 }
 
-export interface IResultData {
-  avatar: IUserAvatar;
-  contents: IResultAnswerContents[];
-  places: [];
+export interface IFriend {
+  image: string;
+  name: string;
 }
 
 export interface IPlaces {
@@ -34,4 +33,11 @@ export interface IPlaces {
   image: string;
   title: string;
   url: string;
+}
+
+export interface IResultData {
+  avatar: IUserAvatar;
+  contents: IResultAnswerContents[];
+  friend: IFriend;
+  places: IPlaces[];
 }

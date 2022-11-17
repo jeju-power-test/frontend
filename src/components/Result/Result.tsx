@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button } from '@components/common';
-import { Answer, Places } from '@components/Result';
+import { Answer, Friend, Places } from '@components/Result';
 import useTestResult from '@hooks/query/useTestResult';
 import AVARTAR from '@constants/avatar';
 import { IUserIdentity } from '@/types/result';
@@ -52,6 +52,11 @@ function Result() {
             priority
           />
           <Answer contents={userIdentity.contents} />
+          <Friend
+            friendImage={userIdentity.friend.image}
+            friendAvatar={userIdentity.friend.name}
+            friendIdentity={filterUserIdentity(userIdentity.friend.name)}
+          />
           <Places places={userIdentity.places} />
           <Style.ButtonWrapper>
             <Button variant="primary" onClick={() => router.push('/')}>
