@@ -91,7 +91,8 @@ const AVARTAR = [
     name: '고기국수',
     identity: (
       <p>
-        <strong>테스트 중</strong>
+        제주도에 대해
+        <strong>골고루 이해하는</strong> 고기국수
       </p>
     ),
   },
