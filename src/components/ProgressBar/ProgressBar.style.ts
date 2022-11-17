@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
-  margin: 6rem 0;
-`;
+export const Container = styled.div``;
 
 export const Description = styled.div`
   ${({ theme }) => {

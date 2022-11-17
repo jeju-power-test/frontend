@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { Button } from '@components/common';
 import { Answer, Friend, Places } from '@components/Result';
 import useTestResult from '@hooks/query/useTestResult';
-import useScrollFadeIn from '@hooks/useScrollFadeIn';
 import AVARTAR from '@constants/avatar';
 import { IUserIdentity } from '@/types/result';
 import * as Style from './Result.style';
@@ -19,12 +18,6 @@ function Result() {
   const userUrl = `https://monumental-madeleine-10eb3f.netlify.app/${router.asPath}`;
   const submitAnswer = useRecoilValue(submitAnswerAtom);
   const { submitTestResult, userIdentity } = useTestResult();
-
-  const scrollFadeIn = {
-    friend: useScrollFadeIn({ direction: 'up-20', duration: 0.7, delay: 0.2 }),
-    place: useScrollFadeIn({ direction: 'up-20', duration: 0.7, delay: 0.2 }),
-    button: useScrollFadeIn({ direction: 'up-20', duration: 0.7, delay: 0.2 }),
-  };
 
   useEffect(() => {
     if (!submitAnswer.length) {
@@ -59,17 +52,13 @@ function Result() {
             priority
           />
           <Answer contents={userIdentity.contents} />
-          <div {...scrollFadeIn.friend}>
-            <Friend
-              friendImage={userIdentity.friend.image}
-              friendAvatar={userIdentity.friend.name}
-              friendIdentity={filterUserIdentity(userIdentity.friend.name)}
-            />
-          </div>
-          <div {...scrollFadeIn.place}>
-            <Places places={userIdentity.places} />
-          </div>
-          <Style.ButtonWrapper {...scrollFadeIn.button}>
+          <Friend
+            friendImage={userIdentity.friend.image}
+            friendAvatar={userIdentity.friend.name}
+            friendIdentity={filterUserIdentity(userIdentity.friend.name)}
+          />
+          <Places places={userIdentity.places} />
+          <Style.ButtonWrapper>
             <Button variant="primary" onClick={() => router.push('/')}>
               테스트 다시 하기
             </Button>

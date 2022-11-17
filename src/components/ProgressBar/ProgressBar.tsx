@@ -1,22 +1,20 @@
+import Image from 'next/image';
 import * as Style from './ProgressBar.style';
 import { Progress, Grid } from '@nextui-org/react';
-import { useRecoilValue } from 'recoil';
-import { progressbarAtom } from '@recoil/progressbar';
-import Image from 'next/image';
 
-function ProgressBar() {
-  const progressbar = useRecoilValue(progressbarAtom);
+interface IProgressBarProps {
+  status: string;
+}
 
+function ProgressBar({ status }: IProgressBarProps) {
   return (
     <Style.Container>
       <Grid.Container xs={15} md={20} xl={20}>
         <Grid>
-          <Style.Description>{`${
-            Number(progressbar) + 1
-          }/10`}</Style.Description>
+          <Style.Description>{`${Number(status)}/10`}</Style.Description>
           <Progress
             color="warning"
-            value={(progressbar + 1) * 10}
+            value={Number(status) * 10}
             status="warning"
           >
             <Image

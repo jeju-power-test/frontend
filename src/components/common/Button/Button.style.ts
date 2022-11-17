@@ -10,7 +10,7 @@ export const Button = styled.button<IButtonProps>`
       ${generateColor(color, variant)};
 
       width: 32rem;
-      height: 7rem;
+      height: 4.8rem;
       font-size: 2.4rem;
       line-height: 2.8rem;
       font-family: 'KotraHope';
