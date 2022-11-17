@@ -25,6 +25,10 @@ const generateColor = (color: ColorType, variant: string) => {
     case 'primary':
       return css`
         background-color: ${color.primary};
+
+        &:hover {
+          background-color: ${color.primaryHover};
+        }
       `;
     case 'secondary':
       return css`
