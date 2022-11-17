@@ -8,9 +8,7 @@ const HomePage: NextPage = () => {
   const viewCount = useViewCount();
 
   return (
-    <Layout type="fill">
-      <Home count={viewCount.count} />
-    </Layout>
+    <Layout type="fill">{viewCount && <Home count={viewCount.count} />}</Layout>
   );
 };
 

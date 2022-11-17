@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Button } from '@components/common';
-import { Answer, Places } from '@components/Result';
+import { Answer, Friend, Places } from '@components/Result';
 import useTestResult from '@hooks/query/useTestResult';
+import useScrollFadeIn from '@hooks/useScrollFadeIn';
 import AVARTAR from '@constants/avatar';
 import { IUserIdentity } from '@/types/result';
 import * as Style from './Result.style';
@@ -17,6 +18,12 @@ function Result() {
 
   const { submitTestResult, userIdentity } = useTestResult();
 
+  const scrollFadeIn = {
+    friend: useScrollFadeIn({ direction: 'up-20', duration: 0.7, delay: 0.2 }),
+    place: useScrollFadeIn({ direction: 'up-20', duration: 0.7, delay: 0.2 }),
+    button: useScrollFadeIn({ direction: 'up-20', duration: 0.7, delay: 0.2 }),
+  };
+
   useEffect(() => {
     if (!submitAnswer.length) {
       router.push('/');
@@ -24,8 +31,6 @@ function Result() {
 
     submitTestResult(submitAnswer);
   }, []);
-
-  console.log('userIdentity: ', userIdentity);
 
   const filterUserIdentity = (name: string) => {
     const filteredAvatar = AVARTAR.filter(
@@ -52,8 +57,17 @@ function Result() {
             priority
           />
           <Answer contents={userIdentity.contents} />
-          <Places places={userIdentity.places} />
-          <Style.ButtonWrapper>
+          <div {...scrollFadeIn.friend}>
+            <Friend
+              friendImage={userIdentity.friend.image}
+              friendAvatar={userIdentity.friend.name}
+              friendIdentity={filterUserIdentity(userIdentity.friend.name)}
+            />
+          </div>
+          <div {...scrollFadeIn.place}>
+            <Places places={userIdentity.places} />
+          </div>
+          <Style.ButtonWrapper {...scrollFadeIn.button}>
             <Button variant="primary" onClick={() => router.push('/')}>
               테스트 다시 하기
             </Button>
