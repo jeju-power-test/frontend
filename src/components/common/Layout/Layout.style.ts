@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-export const Layout = styled.main`
-  ${({ theme }) => {
+export const Layout = styled.main<{ type: string }>`
+  ${({ theme, type }) => {
     const { black } = theme.color;
 
     return css`
@@ -9,7 +9,7 @@ export const Layout = styled.main`
       flex-direction: column;
       justify-content: center;
       max-width: 32rem;
-      height: 100vh;
+      height: ${type === 'fill' && '100vh'};
       margin: 0 auto;
       text-align: center;
       color: ${black};

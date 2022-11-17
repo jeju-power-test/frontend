@@ -5,6 +5,8 @@ export const color = {
   secondary: '#78E590',
   background: '#FFFBF9',
   black: '#303030',
+  white: '#FFFFFF',
+  alert: '#EB3F3F',
 } as const;
 
 export type ColorType = typeof color;
