@@ -13,6 +13,12 @@ const Font = createGlobalStyle`
   font-display: swap;
   src: url('/assets/fonts/Pretendard.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'Pretendard-Regular';
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/Pretendard-Regular.woff2') format('woff2');
+}
 `;
 
 export default Font;
