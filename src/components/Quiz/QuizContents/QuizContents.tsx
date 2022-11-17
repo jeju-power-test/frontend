@@ -2,12 +2,12 @@ import * as Style from './QuizContents.style';
 import { Button } from '@components/common';
 import { useRouter } from 'next/router';
 import { QUIZ_NUMBER } from '@constants/quiz';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { progressbarAtom } from '@recoil/progressbar';
 import { submitAnswerAtom } from '@recoil/submitAnswer';
 
 function FindNextQuizNumber() {
-  let router = useRouter();
+  const router = useRouter();
 
   const quizNumber = QUIZ_NUMBER.find((number) => number === router.query.id);
   const nextQuizNumber = QUIZ_NUMBER.find((number) => number === quizNumber);

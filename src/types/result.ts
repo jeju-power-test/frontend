@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 export interface IUserSubmitData {
   id: number;
   answer: string;
@@ -18,7 +20,7 @@ export interface IUserAvatar {
 
 export interface IUserIdentity {
   name: string;
-  identity: JSX.Element;
+  identity: ReactElement;
 }
 
 export interface IResultData {
