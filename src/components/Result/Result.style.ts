@@ -40,7 +40,7 @@ export const UserIdentity = styled.p`
       line-height: 3.6rem;
       font-size: 3rem;
 
-      & > p {
+      & > span {
         & > strong {
           color: ${primary};
         }

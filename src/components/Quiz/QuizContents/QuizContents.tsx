@@ -1,5 +1,4 @@
 import * as Style from './QuizContents.style';
-import { Button } from '@components/common';
 import { useRouter } from 'next/router';
 import { QUIZ_NUMBER } from '@constants/quiz';
 import { useSetRecoilState } from 'recoil';
@@ -24,10 +23,13 @@ function QuizContents({ data }: any) {
   const setProgressbar = useSetRecoilState(progressbarAtom);
   const setSubmitAnswer = useSetRecoilState(submitAnswerAtom);
 
-  const handleProgressbarStateClick = (selectedAnswer: string) => {
-    setProgressbar(Number(id));
+  const handleProgressbarStateClick = (
+    selectedId: number,
+    selectedAnswer: string,
+  ) => {
+    setProgressbar(Number(selectedId));
     setSubmitAnswer((prev) => {
-      return [...prev, { id: id + 1, answer: selectedAnswer }];
+      return [...prev, { id: selectedId, answer: selectedAnswer }];
     });
 
     if (id === 9) {
@@ -46,7 +48,7 @@ function QuizContents({ data }: any) {
           <Style.QuestionButton
             key={key}
             style={{ margin: '1rem 0rem' }}
-            onClick={() => handleProgressbarStateClick(answer)}
+            onClick={() => handleProgressbarStateClick(id + 1, answer)}
           >
             {answer}
           </Style.QuestionButton>
