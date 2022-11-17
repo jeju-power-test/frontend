@@ -13,8 +13,7 @@ function Answer() {
             {ANSWER.map((quiz) => (
               <Style.QuizAnswerContent
                 key={quiz.id}
-                title={`${quiz.id}번 정답: ${quiz.answer}`}
-                subtitle={
+                title={
                   <Style.IconWrapper>
                     <Image
                       src={`/assets/svg/${quiz.correct}.svg`}
@@ -26,6 +25,7 @@ function Answer() {
                   </Style.IconWrapper>
                 }
                 correct={quiz.correct}
+                subtitle={`${quiz.id}번 정답: ${quiz.answer}`}
               >
                 <Style.QuizCommentary>{quiz.commentary}</Style.QuizCommentary>
               </Style.QuizAnswerContent>
