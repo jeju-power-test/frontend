@@ -36,6 +36,13 @@ const nextConfig = {
   env: {
     BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
   },
+  images: {
+    domains: [
+      'kr.object.ncloudstorage.com',
+      'www.jeju.go.kr',
+      'www.visitjeju.net',
+    ],
+  },
 };
 
 module.exports = withInterceptStdout(nextConfig, (text) =>
