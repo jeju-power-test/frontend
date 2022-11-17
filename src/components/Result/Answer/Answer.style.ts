@@ -14,9 +14,9 @@ export const AnswerContentCard = styled(Card)`
 `;
 
 export const AnswerContentTitle = styled.h1`
-  margin-bottom: 2.8rem;
-  line-height: 2.3rem;
-  font-size: 2rem;
+  margin-bottom: 2.1rem;
+  line-height: 3rem;
+  font-size: 2.6rem;
 `;
 
 export const QuizContentWrapper = styled(Collapse.Group)`
@@ -29,19 +29,34 @@ export const QuizAnswerContentWrapper = styled.li`
   margin-bottom: 1.8rem;
 `;
 
-export const QuizAnswerTitle = styled(Collapse)<{ correct: string }>`
+export const QuizAnswerContent = styled(Collapse)<{ correct: string }>`
   ${({ theme, correct }) => {
-    const { alert } = theme.color;
+    const { alert, success } = theme.color;
 
     return css`
+      .nextui-collapse-title-content {
+        display: flex;
+
+        & > .nextui-collapse-subtitle {
+          height: 100%;
+          margin-left: 0.6rem;
+        }
+      }
+
       .nextui-collapse-title {
         margin-bottom: 0.2rem;
-        line-height: 2.6rem;
-        color: ${correct === 'false' && alert};
+        line-height: 2.2rem;
+        color: ${correct === 'success' ? success : alert};
         font-size: 2.4rem;
       }
     `;
   }}
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
 `;
 
 export const QuizCommentary = styled(Text)`
