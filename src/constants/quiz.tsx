@@ -88,7 +88,7 @@ export const QUIZ_DATA = [
   {
     id: 8,
     question: '그거 앗아도라',
-    answer: ['그거 가져다 줘라', '그거 알아둬라, 그거 가져다 줘라'],
+    answer: ['그거 알아둬라', '그거 가져다 줘라'],
   },
   {
     id: 9,
