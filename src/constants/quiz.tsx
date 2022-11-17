@@ -40,6 +40,7 @@ export const QUIZ_DATA = [
     id: 0,
     question: '제주에서 일제강점기로부터 시작된 아픔을 가진 음식은?',
     answer: ['오메기떡', '물회', '몸국', '고기 국수'],
+    img: 'https://kr.object.ncloudstorage.com/jejupower/content/1.png',
   },
   {
     id: 1,
@@ -51,29 +52,34 @@ export const QUIZ_DATA = [
       '제주공립농업학교 학생운동',
       '제주해녀항일운동',
     ],
+    img: 'https://kr.object.ncloudstorage.com/jejupower/content/2.png',
   },
   {
     id: 2,
     question:
       '제주도에서 일어난 한국 현대사에서 한국전쟁 다음으로 인명 피해가 극심했던 비극적인 사건은?',
     answer: ['6·10만세운동', '신민회 사건', '조선어학회 사건', '4ㆍ3 사건'],
+    img: 'https://kr.object.ncloudstorage.com/jejupower/content/3.png',
   },
   {
     id: 3,
     question:
       '소가 누워있는 모양을 닮았다고 해서 일찍부터 소섬 또는 쉐섬으로 불리운 섬은?',
     answer: ['마라도', '우도', '비양도', '가파도'],
+    img: 'https://kr.object.ncloudstorage.com/jejupower/content/4.png',
   },
   {
     id: 4,
     question:
       '제주특별자치도 한라산 산정에 있으며 사시사철 물이 괴어 있는 호수의 이름은?',
     answer: ['천지', '백록담'],
+    img: 'https://kr.object.ncloudstorage.com/jejupower/content/5.png',
   },
   {
     id: 5,
     question: `'제주 OOO 해안 일제 동굴진지'`,
     answer: ['일출봉', '한라산', '송악산', '가마오름'],
+    img: 'https://kr.object.ncloudstorage.com/jejupower/content/6.png',
   },
   {
     id: 6,
@@ -93,6 +99,6 @@ export const QUIZ_DATA = [
   {
     id: 9,
     question: '제주특별자치도의 메인 캐릭터는?',
-    answer: ['왼쪽', '오른쪽'],
+    answer: ['A', 'B'],
   },
 ];
