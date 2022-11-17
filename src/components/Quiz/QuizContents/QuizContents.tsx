@@ -1,11 +1,9 @@
 import * as Style from './QuizContents.style';
-import { ColorType } from '@styles/theme';
 import { Button } from '@components/common';
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { QUIZ_NUMBER } from '@constants/quiz';
 import { useSetRecoilState } from 'recoil';
 import { progressbarState } from '@recoil/progressbar';
-import { useEffect } from 'react';
 
 function FindNextQuizNumber() {
   let router = useRouter();
@@ -25,13 +23,11 @@ function QuizContents({ data }: any) {
   let nextPageIndex = FindNextQuizNumber();
   return (
     <>
-      <Style.QuestionDescription>나의 제주력은 몇점?</Style.QuestionDescription>
-
       <Style.Question>{question}</Style.Question>
 
       {answer.map((answer: any, key: number) => {
         return (
-          <Button
+          <Style.QuestionButton
             key={key}
             style={{ margin: '1rem 0rem' }}
             onClick={() => {
@@ -43,7 +39,7 @@ function QuizContents({ data }: any) {
             }}
           >
             {answer}
-          </Button>
+          </Style.QuestionButton>
         );
       })}
     </>
