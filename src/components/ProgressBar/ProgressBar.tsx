@@ -1,11 +1,11 @@
 import * as Style from './ProgressBar.style';
 import { Progress, Grid } from '@nextui-org/react';
 import { useRecoilValue } from 'recoil';
-import { progressbarState } from '@recoil/progressbar';
+import { progressbarAtom } from '@recoil/progressbar';
 import Image from 'next/image';
 
 function ProgressBar() {
-  const progressbar = useRecoilValue(progressbarState);
+  const progressbar = useRecoilValue(progressbarAtom);
 
   return (
     <Style.Container>

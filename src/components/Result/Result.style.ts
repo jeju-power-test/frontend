@@ -31,10 +31,22 @@ export const TestScore = styled.p`
 `;
 
 export const UserIdentity = styled.p`
-  margin-bottom: 3.2rem;
-  line-height: 3.6rem;
-  font-size: 3rem;
-  white-space: pre-wrap;
+  ${({ theme }) => {
+    const { primary } = theme.color;
+
+    return css`
+      margin-bottom: 4rem;
+      white-space: pre-wrap;
+      line-height: 3.6rem;
+      font-size: 3rem;
+
+      & > p {
+        & > strong {
+          color: ${primary};
+        }
+      }
+    `;
+  }}
 `;
 
 export const ButtonWrapper = styled.div`

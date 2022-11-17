@@ -1,16 +1,20 @@
 import Image from 'next/image';
+import { IResultAnswerContents } from '@/types/result';
 import * as Style from './Answer.style';
 import { Grid } from '@nextui-org/react';
-import { ANSWER } from '../mock';
 
-function Answer() {
+interface IAnswerProps {
+  contents: IResultAnswerContents[];
+}
+
+function Answer({ contents }: IAnswerProps) {
   return (
     <section>
       <Style.AnswerContentCard>
         <Style.AnswerContentTitle>정답 공개</Style.AnswerContentTitle>
         <Grid.Container gap={2}>
           <Style.QuizContentWrapper divider={false}>
-            {ANSWER.map((quiz) => (
+            {contents.map((quiz) => (
               <Style.QuizAnswerContent
                 key={quiz.id}
                 title={

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IUserSubmitData } from '@/types/result';
+import { IResultData, IUserSubmitData } from '@/types/result';
 import { axiosInstance } from '@api/axiosIntance';
 import { useMutation } from 'react-query';
 
@@ -10,12 +10,12 @@ async function postTestResultData(userSubmitData: IUserSubmitData[]) {
 }
 
 function useTestResult() {
-  const [userIdentity, setUserIdentity] = useState('');
+  const [userIdentity, setUserIdentity] = useState<IResultData | null>(null);
 
   const { mutate: submitTestResult } = useMutation(
     (userSubmitData: IUserSubmitData[]) => postTestResultData(userSubmitData),
     {
-      onSuccess: (data) => {
+      onSuccess: (data: IResultData) => {
         setUserIdentity(data);
       },
     },

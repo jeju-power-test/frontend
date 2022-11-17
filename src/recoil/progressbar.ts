@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-export const progressbarState = atom({
+export const progressbarAtom = atom({
   key: 'progressBar',
   default: 0,
 });
