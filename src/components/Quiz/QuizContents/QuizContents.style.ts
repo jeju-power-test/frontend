@@ -12,6 +12,12 @@ export const QuizLayout = styled.main`
   margin: 0 auto;
 `;
 
+export const BtnLayout = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+`;
+
 export const Question = styled.div`
   animation: 0.3s ${FadeInLeft};
   width: 100%;
@@ -26,10 +32,11 @@ export const Question = styled.div`
 export const QuestionImage = styled(Image)`
   margin-top: 2.4rem;
   margin-bottom: 6.4rem;
+  animation: 0.6s ${FadeInLeft};
 `;
 
 export const QuestionButton = styled(Button)`
-  animation: 0.7s ${FadeInLeft};
+  animation: 0.9s ${FadeInLeft};
 
   &:focus {
     /* transform: scale(1.3); */
