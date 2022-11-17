@@ -8,7 +8,7 @@ interface IProps {
 const QuizPage1 = ({ queries }: IProps) => {
   return (
     <>
-      <Layout>
+      <Layout type="fill">
         <ProgressBar />
         <div>문제 {queries}</div>
         {QUIZ_COMPONENTS[queries]}
