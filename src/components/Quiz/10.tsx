@@ -1,6 +1,6 @@
-import { QuizContents } from '@components/common';
-import { QUIZ_DATA } from '@constants/quiz';
 import * as Style from './Quiz.style';
+import { QUIZ_DATA } from '@constants/quiz';
+import QuizContents from './QuizContents/QuizContents';
 
 function Quiz10() {
   return (

@@ -9,6 +9,7 @@ export const color = {
   white: '#FFFFFF',
   alert: '#E00F1E',
   success: '#3DB409',
+  gray: '#B3B3B3',
 } as const;
 
 export type ColorType = typeof color;

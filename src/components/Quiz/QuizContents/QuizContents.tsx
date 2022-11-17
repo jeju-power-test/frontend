@@ -3,9 +3,13 @@ import { ColorType } from '@styles/theme';
 import { Button } from '@components/common';
 import { Router, useRouter } from 'next/router';
 import { QUIZ_NUMBER } from '@constants/quiz';
+import { useSetRecoilState } from 'recoil';
+import { progressbarState } from '@recoil/progressbar';
+import { useEffect } from 'react';
 
 function FindNextQuizNumber() {
-  const router = useRouter();
+  let router = useRouter();
+
   const quizNumber = QUIZ_NUMBER.find((number) => number === router.query.id);
   const nextQuizNumber = QUIZ_NUMBER.find((number) => number === quizNumber);
   const result = String(Number(nextQuizNumber) + 1);
@@ -15,9 +19,9 @@ function FindNextQuizNumber() {
 
 function QuizContents({ data }: any) {
   const { id, question, answer } = data;
-  console.log(question);
-  console.log(answer);
   let router = useRouter();
+  const setProgressbar = useSetRecoilState(progressbarState);
+  setProgressbar(Number(id));
   let nextPageIndex = FindNextQuizNumber();
   return (
     <>
@@ -25,12 +29,17 @@ function QuizContents({ data }: any) {
 
       <Style.Question>{question}</Style.Question>
 
-      {answer.map((answer: any) => {
+      {answer.map((answer: any, key: number) => {
         return (
           <Button
+            key={key}
             style={{ margin: '1rem 0rem' }}
             onClick={() => {
-              router.push(`/quiz/${nextPageIndex}`);
+              if (id === 9) {
+                router.push('/result');
+              } else {
+                router.push(`/quiz/${nextPageIndex}`);
+              }
             }}
           >
             {answer}

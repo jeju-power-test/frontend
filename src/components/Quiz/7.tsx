@@ -1,5 +1,5 @@
-import { QuizContents } from '@components/common';
 import { QUIZ_DATA } from '@constants/quiz';
+import QuizContents from './QuizContents/QuizContents';
 
 function Quiz7() {
   return (
