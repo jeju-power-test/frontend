@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Image from 'next/image';
+import useScrollFadeIn from '@hooks/useScrollFadeIn';
 import * as Style from './Friend.style';
 
 interface IFriendProps {
@@ -9,8 +10,12 @@ interface IFriendProps {
 }
 
 function Friend({ friendImage, friendAvatar, friendIdentity }: IFriendProps) {
+  const scrollFadeIn = {
+    friend: useScrollFadeIn({ direction: 'up-20', duration: 0.5, delay: 0.2 }),
+  };
+
   return (
-    <Style.FriendContainer>
+    <Style.FriendContainer {...scrollFadeIn.friend}>
       <Style.FriendTitle>나와 잘맞는 친구</Style.FriendTitle>
       <Style.FriendContentCard>
         <Image src={friendImage} alt={friendAvatar} width={145} height={135} />
