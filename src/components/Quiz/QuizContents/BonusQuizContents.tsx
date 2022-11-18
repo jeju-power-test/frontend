@@ -2,7 +2,6 @@ import * as Style from './QuizContents.style';
 import { useRouter } from 'next/router';
 import { QUIZ_NUMBER } from '@constants/quiz';
 import { useSetRecoilState } from 'recoil';
-import { progressbarAtom } from '@recoil/progressbar';
 import { submitAnswerAtom } from '@recoil/submitAnswer';
 import * as subStyle from '../Quiz.style';
 import Image from 'next/image';
@@ -22,14 +21,12 @@ function BonusQuizContents({ data }: any) {
   const router = useRouter();
   const nextPageIndex = FindNextQuizNumber();
 
-  const setProgressbar = useSetRecoilState(progressbarAtom);
   const setSubmitAnswer = useSetRecoilState(submitAnswerAtom);
 
   const handleProgressbarStateClick = (
     selectedId: number,
     selectedAnswer: string,
   ) => {
-    setProgressbar(Number(selectedId));
     setSubmitAnswer((prev) => {
       return [...prev, { id: selectedId, answer: selectedAnswer }];
     });
