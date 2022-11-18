@@ -50,8 +50,8 @@ function Result() {
         <Image
           src="/assets/images/loading.gif"
           alt="테스트 결과 분석 중"
-          width={240}
-          height={256}
+          width={270}
+          height={270}
         />
       </Style.LoadingContainer>
     );
@@ -66,13 +66,7 @@ function Result() {
           <Style.UserIdentity>
             {filterUserIdentity(userIdentity.avatar.name)}
           </Style.UserIdentity>
-          <Image
-            src={userIdentity.avatar.image}
-            alt={userIdentity.avatar.name}
-            width={240}
-            height={245}
-            priority
-          />
+          <img src={userIdentity.avatar.image} alt={userIdentity.avatar.name} />
           <Answer contents={userIdentity.contents} />
           <Friend
             friendImage={userIdentity.friend.image}
