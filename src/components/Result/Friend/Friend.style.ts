@@ -6,7 +6,7 @@ export const FriendContainer = styled.section`
 `;
 
 export const FriendContentCard = styled(Card)`
-  padding: 2rem 8.1rem;
+  padding: 2rem 5.1rem;
   text-align: center;
 
   & > img {
