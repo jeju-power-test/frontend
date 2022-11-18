@@ -45,19 +45,19 @@ function BonusQuizContents({ data }: any) {
       <subStyle.ImgContainer>
         <subStyle.ImgBox>
           <Image
-            src="https://kr.object.ncloudstorage.com/jejupower/content/10-A.png"
+            src="/assets/images/10-a.png"
             alt="왼쪽 아이콘"
-            width={117}
-            height={148}
+            width={148}
+            height={182}
           />
         </subStyle.ImgBox>
 
         <subStyle.ImgBox>
           <Image
-            src="https://kr.object.ncloudstorage.com/jejupower/content/10-B.png"
+            src="/assets/images/10-b.png"
             alt="오른쪽 아이콘"
             width={148}
-            height={98}
+            height={182}
           />
         </subStyle.ImgBox>
       </subStyle.ImgContainer>
