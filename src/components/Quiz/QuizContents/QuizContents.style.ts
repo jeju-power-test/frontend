@@ -32,6 +32,7 @@ export const Question = styled.div`
 export const QuestionImage = styled(Image)`
   margin-top: 2.4rem;
   margin-bottom: 6.4rem;
+  border-radius: 10px;
   animation: 0.6s ${FadeInLeft};
 `;
 
