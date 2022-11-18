@@ -5,6 +5,13 @@ export const ResultContainer = styled.article`
   padding-bottom: 10rem;
 `;
 
+export const LoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
+
 export const ResultTitle = styled.h1`
   ${({ theme }) => {
     const { primary } = theme.color;

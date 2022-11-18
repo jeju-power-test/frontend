@@ -7,10 +7,9 @@ import AVARTAR from '@constants/avatar';
 import { IUserIdentity } from '@/types/result';
 import * as Style from './Result.style';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { submitAnswerAtom } from '@recoil/submitAnswer';
-
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 function Result() {
@@ -18,6 +17,8 @@ function Result() {
   const userUrl = `https://monumental-madeleine-10eb3f.netlify.app/${router.asPath}`;
   const submitAnswer = useRecoilValue(submitAnswerAtom);
   const { submitTestResult, userIdentity } = useTestResult();
+
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!submitAnswer.length) {
@@ -35,9 +36,30 @@ function Result() {
     return filteredAvatar[0].identity;
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(2500);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <Style.LoadingContainer>
+        <Image
+          src="/assets/images/loading.gif"
+          alt="테스트 결과 분석 중"
+          width={240}
+          height={256}
+        />
+      </Style.LoadingContainer>
+    );
+  }
+
   return (
     <Style.ResultContainer>
-      {userIdentity && (
+      {!isLoading && userIdentity && (
         <>
           <Style.ResultTitle>나의 제주력은 몇점?</Style.ResultTitle>
           <Style.TestScore>{`${userIdentity.avatar.score}점`}</Style.TestScore>
