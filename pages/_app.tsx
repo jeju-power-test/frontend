@@ -13,6 +13,8 @@ import GlobalStyle from '@styles/globalStyle';
 import Font from '@styles/font';
 import theme from '@styles/theme';
 
+import HeadMeta from '@components/Meta/HeadMeta';
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -24,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Font />
               <Hydrate state={pageProps.dehydratedState}>
                 <NextUIProvider>
+                  <HeadMeta />
                   <Component {...pageProps} />
                 </NextUIProvider>
               </Hydrate>
