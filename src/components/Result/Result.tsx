@@ -14,7 +14,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 function Result() {
   const router = useRouter();
-  const userUrl = `https://monumental-madeleine-10eb3f.netlify.app/${router.asPath}`;
+  const userUrl = `https://jejupower.site${router.asPath}`;
   const submitAnswer = useRecoilValue(submitAnswerAtom);
   const { submitTestResult, userIdentity } = useTestResult();
 
