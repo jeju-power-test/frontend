@@ -8,15 +8,17 @@ import { IUserIdentity } from '@/types/result';
 import * as Style from './Result.style';
 
 import { useEffect, useState } from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { submitAnswerAtom } from '@recoil/submitAnswer';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Identity from './Identity/Identity';
+import { toastAlertAtom } from '@recoil/toastAlert';
 
 function Result() {
   const router = useRouter();
   const userUrl = `https://monumental-madeleine-10eb3f.netlify.app/${router.asPath}`;
   const submitAnswer = useRecoilValue(submitAnswerAtom);
+  const setIsToastAlert = useSetRecoilState(toastAlertAtom);
   const { submitTestResult, userIdentity } = useTestResult();
 
   const [isLoading, setIsLoading] = useState(true);
@@ -76,7 +78,7 @@ function Result() {
             </Button>
             <CopyToClipboard
               text={userUrl}
-              onCopy={() => alert('링크가 복사되었습니다')}
+              onCopy={() => setIsToastAlert(true)}
             >
               <Button variant="secondary">친구에게 공유하기</Button>
             </CopyToClipboard>
