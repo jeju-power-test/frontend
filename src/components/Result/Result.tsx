@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { submitAnswerAtom } from '@recoil/submitAnswer';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Identity from './Identity/Identity';
 
 function Result() {
   const router = useRouter();
@@ -61,12 +62,7 @@ function Result() {
     <Style.ResultContainer>
       {!isLoading && userIdentity && (
         <>
-          <Style.ResultTitle>나의 제주력은 몇점?</Style.ResultTitle>
-          <Style.TestScore>{`${userIdentity.avatar.score}점`}</Style.TestScore>
-          <Style.UserIdentity>
-            {filterUserIdentity(userIdentity.avatar.name)}
-          </Style.UserIdentity>
-          <img src={userIdentity.avatar.image} alt={userIdentity.avatar.name} />
+          <Identity avatar={userIdentity.avatar} />
           <Answer contents={userIdentity.contents} />
           <Friend
             friendImage={userIdentity.friend.image}
