@@ -13,7 +13,7 @@ const HeadMeta = () => {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content="https://monumental-madeleine-10eb3f.netlify.app/"
+        content="https://monumental-madeleine-10eb3f.netlify.app"
       />
       <meta
         property="og:image"
