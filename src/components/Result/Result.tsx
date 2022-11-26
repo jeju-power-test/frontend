@@ -16,7 +16,7 @@ import { toastAlertAtom } from '@recoil/toastAlert';
 
 function Result() {
   const router = useRouter();
-  const userUrl = `https://monumental-madeleine-10eb3f.netlify.app/${router.asPath}`;
+  const userUrl = `https://jejupower.site${router.asPath}`;
   const submitAnswer = useRecoilValue(submitAnswerAtom);
   const setIsToastAlert = useSetRecoilState(toastAlertAtom);
   const { submitTestResult, userIdentity } = useTestResult();
