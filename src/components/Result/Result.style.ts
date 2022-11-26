@@ -1,3 +1,4 @@
+import { Button } from '@components/common';
 import styled, { css } from 'styled-components';
 
 export const ResultContainer = styled.article`
@@ -60,4 +61,12 @@ export const ButtonWrapper = styled.div`
   & > button:nth-of-type(1) {
     margin-bottom: 2.6rem;
   }
+`;
+
+export const ResultUserAvatarFriend = styled.section`
+  margin-top: 2rem;
+`;
+
+export const GoStartPageButton = styled(Button)`
+  margin-top: 2rem;
 `;

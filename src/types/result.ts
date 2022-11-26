@@ -19,8 +19,11 @@ export interface IUserAvatar {
 }
 
 export interface IUserIdentity {
+  id: number | string;
   name: string;
+  image?: string;
   identity: ReactElement;
+  friend?: { id: number; image: string };
 }
 
 export interface IFriend {
