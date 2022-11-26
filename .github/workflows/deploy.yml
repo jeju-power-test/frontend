@@ -29,6 +29,6 @@ jobs:
 
     - name: web docker build and push
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_FRONTEND }}/code-care-server .
-        docker push ${{ secrets.DOCKERHUB_FRONTEND }}/code-care-server
+        docker build -t ${{ secrets.DOCKERHUB_FRONTEND }}/jejupower_frontend .
+        docker push ${{ secrets.DOCKERHUB_FRONTEND }}/jejupower_frontend
         
