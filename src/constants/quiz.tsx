@@ -83,17 +83,20 @@ export const QUIZ_DATA = [
   },
   {
     id: 6,
-    question: '경 호곡 말곡',
+    question: '이 방언의 뜻은 무엇일까요?',
+    dialect: '"경 호곡 말곡"',
     answer: ['그러지 말고', '그렇고 말고'],
   },
   {
     id: 7,
-    question: '도르멍 도르멍 옵서',
+    question: '이 방언의 뜻은 무엇일까요?',
+    dialect: '"도르멍 도르멍 옵서"',
     answer: ['천천히 오세요', '빨리빨리 오세요'],
   },
   {
     id: 8,
-    question: '그거 앗아도라',
+    question: '이 방언의 뜻은 무엇일까요?',
+    dialect: '"그거 앗아도라"',
     answer: ['그거 알아둬라', '그거 가져다 줘라'],
   },
   {
