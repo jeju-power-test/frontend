@@ -5,3 +5,7 @@ export interface IQuizData {
   answer: string[];
   img?: string;
 }
+
+export interface IQuizDataContent {
+  data: IQuizData;
+}
