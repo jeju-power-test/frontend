@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
 import * as Style from './QuizContents.style';
 import { QUIZ_NUMBER } from '@constants/quiz';
-import { IQuizData } from '@/types/quiz';
-
+import { IQuizDataContent } from '@/types/quiz';
 import { useSetRecoilState } from 'recoil';
 import { submitAnswerAtom } from '@recoil/submitAnswer';
 
@@ -16,11 +15,7 @@ function FindNextQuizNumber() {
   return result;
 }
 
-interface IQuizContentsProps {
-  data: IQuizData;
-}
-
-function QuizContents({ data }: IQuizContentsProps) {
+function QuizContents({ data }: IQuizDataContent) {
   const { id, question, dialect, answer, img } = data;
   const router = useRouter();
   const nextPageIndex = FindNextQuizNumber();
