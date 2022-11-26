@@ -1,6 +1,8 @@
-import * as Style from './QuizContents.style';
 import { useRouter } from 'next/router';
+import * as Style from './QuizContents.style';
 import { QUIZ_NUMBER } from '@constants/quiz';
+import { IQuizData } from '@/types/quiz';
+
 import { useSetRecoilState } from 'recoil';
 import { submitAnswerAtom } from '@recoil/submitAnswer';
 
@@ -14,8 +16,12 @@ function FindNextQuizNumber() {
   return result;
 }
 
-function QuizContents({ data }: any) {
-  const { id, question, answer, img } = data;
+interface IQuizContentsProps {
+  data: IQuizData;
+}
+
+function QuizContents({ data }: IQuizContentsProps) {
+  const { id, question, dialect, answer, img } = data;
   const router = useRouter();
   const nextPageIndex = FindNextQuizNumber();
 
@@ -39,20 +45,19 @@ function QuizContents({ data }: any) {
   return (
     <>
       <Style.Question>{question}</Style.Question>
-      {id < 6 ? (
+      {dialect && <Style.DialectQuestion>{dialect}</Style.DialectQuestion>}
+      {id < 6 && (
         <Style.QuestionImage
-          src={img}
+          src={img as string}
           alt="QuestionImg"
           width={320}
           height={175}
           priority
         />
-      ) : null}
-
+      )}
       {answer.map((answer: string, key: number) => (
         <Style.QuestionButton
           key={key}
-          style={{ margin: '1rem 0rem' }}
           onClick={() => handleProgressbarStateClick(id + 1, answer)}
         >
           {answer}

@@ -18,15 +18,21 @@ export const BtnLayout = styled.div`
   justify-content: space-around;
 `;
 
-export const Question = styled.div`
+export const Question = styled.p`
   animation: 0.3s ${FadeInLeft};
   width: 100%;
   margin-top: 6.8rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   line-height: 4rem;
   word-break: keep-all;
   font-size: 3rem;
+`;
+
+export const DialectQuestion = styled(Question)`
+  display: inline-block;
+  margin-top: 0rem;
+  margin-bottom: 2.4rem;
 `;
 
 export const QuestionImage = styled(Image)`
@@ -37,6 +43,7 @@ export const QuestionImage = styled(Image)`
 `;
 
 export const QuestionButton = styled(Button)`
+  margin: 1rem 0rem;
   animation: 0.9s ${FadeInLeft};
 
   &:focus {
